@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ArchitectureSampleApplication</string>
+
+    <string name="server_url"></string>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context="architecture.sample.reusable.com.architecturesampleapplication.HomeActivity">
+
+        <TextView
+            android:id="@+id/tv_version_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VERSION NUMBER"/>
+
+        <TextView
+            android:id="@+id/tv_version_number_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_version_number"
+            android:layout_marginStart="16dp"
+            android:text="1.0.0" />
+
+        <TextView
+            android:id="@+id/tv_download_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DOWNLOAD URL"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/tv_version_number"/>
+
+        <TextView
+            android:id="@+id/tv_download_url_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/tv_version_number"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/tv_version_number_value"
+            android:text="1.0.0" />
+
+    </RelativeLayout>
+
+</layout>
