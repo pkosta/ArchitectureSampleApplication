@@ -11,6 +11,7 @@ import android.databinding.BindingConversion;
 import javax.inject.Singleton;
 
 import architecture.sample.reusable.com.architecturesampleapplication.ArchitectureApp;
+import architecture.sample.reusable.com.architecturesampleapplication.ArchitectureKotlinApp;
 import architecture.sample.reusable.com.architecturesampleapplication.di.submodule.HomeActivitySubModule;
 import dagger.BindsInstance;
 import dagger.Component;
@@ -33,6 +34,6 @@ public interface AppComponent {
         AppComponent build();
     }
 
-    void inject(ArchitectureApp app);
+    void inject(ArchitectureKotlinApp app);
 
 }

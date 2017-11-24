@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import architecture.sample.reusable.com.architecturesampleapplication.databinding.ActivityHomeActivtyBinding
+import architecture.sample.reusable.com.architecturesampleapplication.datamodel.RecallKotlinModel
+import architecture.sample.reusable.com.architecturesampleapplication.datamodel.printData
 import architecture.sample.reusable.com.architecturesampleapplication.di.ViewModelFactory
 import architecture.sample.reusable.com.architecturesampleapplication.viewmodel.HomeViewModel
 import dagger.android.AndroidInjection
@@ -34,6 +36,11 @@ class HomeActivity : AppCompatActivity() {
 
                 bindingLayout?.tvVersionNumberValue?.setText(model.version)
                 bindingLayout?.tvDownloadUrlValue?.setText(model.downloadUrl)
+
+                // dummy...
+                val kotlinModel = RecallKotlinModel(model.version,
+                        model.downloadUrl)
+                kotlinModel.printData();
 
             }
         })

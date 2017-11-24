@@ -45,7 +45,7 @@ public class Repository {
                 RecallRepoModel repoModel = mRemoteDataSource.getRecallData();
 
                 Log.d("BUGS", "Saving the sata into the database");
-                mDatabase.recallRepoModelDao().insertAll(repoModel);
+                // mDatabase.recallRepoModelDao().insertAll(repoModel);
 
                 Log.d("BUGS", "Getting data from Room Database");
                 Log.d("BUGS", "Data: "

@@ -23,12 +23,12 @@ public class ArchitectureApp extends Application implements HasActivityInjector 
     public void onCreate() {
         super.onCreate();
 
-        DaggerAppComponent
+        /*DaggerAppComponent
                 .builder()
                 .application(this)
                 .context(getApplicationContext())
                 .build()
-                .inject(this);
+                .inject(this);*/
 
     }
 
