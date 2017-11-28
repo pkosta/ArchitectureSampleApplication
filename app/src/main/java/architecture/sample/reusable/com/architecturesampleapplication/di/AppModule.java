@@ -19,6 +19,7 @@ import javax.inject.Singleton;
 import architecture.sample.reusable.com.architecturesampleapplication.R;
 import architecture.sample.reusable.com.architecturesampleapplication.repo.RecallRepoModel;
 import architecture.sample.reusable.com.architecturesampleapplication.repo.Repository;
+import architecture.sample.reusable.com.architecturesampleapplication.repo.localrepo.AppDataKotlin;
 import architecture.sample.reusable.com.architecturesampleapplication.repo.localrepo.AppDatabase;
 import architecture.sample.reusable.com.architecturesampleapplication.repo.localrepo.RecallRepoDao;
 import architecture.sample.reusable.com.architecturesampleapplication.repo.remoterepo.NetworkDataSource;
@@ -66,20 +67,20 @@ public class AppModule {
 
     @Provides
     @Singleton
-    AppDatabase provideAppDatabase(Context context) {
-        return Room.databaseBuilder(context, AppDatabase.class, "architecture-database")
+    AppDataKotlin provideAppDatabase(Context context) {
+        return Room.databaseBuilder(context, AppDataKotlin.class, "architecture-database")
                 .build();
     }
 
     @Provides
-    RecallRepoDao provideRecallRepoDao(AppDatabase appDatabase) {
+    RecallRepoDao provideRecallRepoDao(AppDataKotlin appDatabase) {
         return appDatabase.recallRepoModelDao();
     }
 
     @Provides
     @Singleton
     Repository provideRepository(NetworkDataSource networkDataSource,
-                                 AppDatabase appDatabase) {
+                                 AppDataKotlin appDatabase) {
         return new Repository(networkDataSource, appDatabase);
     }
 

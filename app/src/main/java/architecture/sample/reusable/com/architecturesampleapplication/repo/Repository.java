@@ -11,7 +11,9 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import architecture.sample.reusable.com.architecturesampleapplication.datamodel.RecallModel;
+import architecture.sample.reusable.com.architecturesampleapplication.repo.localrepo.AppDataKotlin;
 import architecture.sample.reusable.com.architecturesampleapplication.repo.localrepo.AppDatabase;
+import architecture.sample.reusable.com.architecturesampleapplication.repo.mapper.ConverterUtils;
 import architecture.sample.reusable.com.architecturesampleapplication.repo.mapper.RepoToUiMapper;
 import architecture.sample.reusable.com.architecturesampleapplication.repo.remoterepo.NetworkDataSource;
 
@@ -19,14 +21,14 @@ public class Repository {
 
     private NetworkDataSource mRemoteDataSource;
 
-    private AppDatabase mDatabase;
+    private AppDataKotlin mDatabase;
 
     private MutableLiveData<RecallModel> data;
 
     private MutableLiveData<Boolean> isDataUpdated;
 
     public Repository(NetworkDataSource networkDataSource,
-                      AppDatabase appDatabase) {
+                      AppDataKotlin appDatabase) {
         data = new MutableLiveData<>();
         isDataUpdated = new MutableLiveData<>();
         isDataUpdated.setValue(false);
@@ -51,7 +53,8 @@ public class Repository {
                 Log.d("BUGS", "Data: "
                         +mDatabase.recallRepoModelDao().getRecallModel().toString());
 
-                return new RepoToUiMapper().map(repoModel); // dispatch the result.
+                //return new RepoToUiMapper().map(repoModel); // dispatch the result.
+                return ConverterUtils.getRecallModelWithRepoModel(repoModel);
             }
 
             @Override

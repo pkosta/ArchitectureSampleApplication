@@ -37,11 +37,12 @@ public class RecallRepoModel {
     @Expose
     private String appURL;
 
+    @NonNull
     public String getAppVersion() {
         return appVersion;
     }
 
-    public void setAppVersion(String appVersion) {
+    public void setAppVersion(@NonNull String appVersion) {
         this.appVersion = appVersion;
     }
 
